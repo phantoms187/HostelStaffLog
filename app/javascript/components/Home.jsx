@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import hostelLogo from "./portlandHostel.png";
 import hostelLogo from "../../assets/images/portlandHostel.png";
 
 const Home = () => (
