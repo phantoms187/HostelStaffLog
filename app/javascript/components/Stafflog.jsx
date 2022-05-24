@@ -81,18 +81,18 @@ const Stafflog = () => {
 
     return (
     <>
-        <section className="stafflog-title-container jumbotron jumbotron-fluid text-center primary-color ">
-        <div className= "primary-color d-flex justify-content-around">
-            <Link to="/" >
-                <img src={hostelLogo} alt="Hostel Logo" />
-            </Link>
-            <div>
-                <h1 className="display-4">Staff Log</h1>
-                <p className="lead text-muted">
-                Please Add Incidents and Passdown Notable for Other Employees
-                </p>
+        <section className="stafflog-title-container jumbotron jumbotron-fluid text-center">
+            <div className= "primary-color d-flex justify-content-center">
+                <Link to="/" >
+                    <img src={hostelLogo} alt="Hostel Logo" />
+                </Link>
+                <div className="d-flex flex-column justify-content-center">
+                    <h1 className="display-4">Staff Log</h1>
+                    <p className="lead text-muted">
+                    Please Add Incidents and Passdown Notable for Other Employees
+                    </p>
+                </div>
             </div>
-        </div>
         </section>
         <div className="py-5 ">
             <main className="container">

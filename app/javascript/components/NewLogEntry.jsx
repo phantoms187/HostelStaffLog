@@ -46,15 +46,15 @@ const NewLogEntry = ( ) => {
     return (
     <div className="d-flex align-items-center justify-content-center container mt-5">
         <div className="col-sm-12">
-            <div className="d-flex justify-content-around align-items-baseline">
+            <div className="d-flex justify-content-center align-items-baseline">
                 <Link to="/" >
                     <img src={hostelLogo} alt="Hostel Logo" />
                 </Link>
-                <div className="border border-secondary">
+                <div>
                     <h1 className="font-weight-normal">
                     Add an Incident to the Staff Log
                     </h1>
-                    <div className="text-right ml-5 float-right border border-success">
+                    <div className="d-flex flex-row-reverse">
                         <Link to="/stafflog" className="btn border border border-secondary">
                             Back to Staff Log
                         </Link>
