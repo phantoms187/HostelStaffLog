@@ -42,8 +42,9 @@ const Stafflog = () => {
         } else {
             return date;
         }
-        // return moment(date, 'YYYY-MM-DD').format('dddd MMMM Do, YYYY');
     }
+
+
 
     const logEntries = stafflog.map((stafflog) => (
         <div key={stafflog.id} className="col-md-12">

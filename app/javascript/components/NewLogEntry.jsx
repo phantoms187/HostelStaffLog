@@ -55,7 +55,7 @@ const NewLogEntry = ( ) => {
                     Add an Incident to the Staff Log
                     </h1>
                     <div className="d-flex flex-row-reverse">
-                        <Link to="/stafflog" className="btn border border border-secondary">
+                        <Link to="/stafflog" className="btn custom-outline-button">
                             Back to Staff Log
                         </Link>
                     </div>

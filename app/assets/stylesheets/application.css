@@ -30,11 +30,20 @@
 .custom-button.btn {
   background-color: #293241;
   color: #FFF;
-  border: none;
+  border: 3px double olivedrab;
 }
 .custom-button.btn:hover {
-  color: #FFF !important;
-  border: none;
+  color: olivedrab !important;
+  border: 3px double olivedrab;
+}
+.custom-outline-button.btn {
+  color: #293241 !important;
+  border: 3px double olivedrab;
+}
+.custom-outline-button.btn:hover {
+  color: olivedrab !important;
+  border: 3px double olivedrab;
+  background-color: #293241;
 }
 .hero {
   width: 100vw;
