@@ -46,7 +46,7 @@ const Stafflog = () => {
     }
 
     const logEntries = stafflog.map((stafflog) => (
-        <div key={stafflog.id} className="col-md-12 ">
+        <div key={stafflog.id} className="col-md-12">
             <div className="card mb-4">
                 <div className="card-body d-flex justify-content-between">
                     <div>
@@ -54,16 +54,16 @@ const Stafflog = () => {
                         <h4> Subject: {stafflog.subject}</h4>
                         <h5>{stafflog.message}</h5>
                     </div>
-                    <div className="col-lg-2 d-flex flex-column justify-content-around">
-                        <div>
-                        <button type="button" className="btn btn-warning" onClick={() => updateSelectedEntry(stafflog)}> 
-                            Edit Entry
-                        </button>
+                    <div className="col-lg-2 d-flex flex-column justify-content-start">
+                        <div className="mb-3">
+                            <button type="button" className="btn btn-warning" onClick={() => updateSelectedEntry(stafflog)}> 
+                                Edit Entry
+                            </button>
                         </div>
                         <div>
-                        <button type="button" className="btn btn-danger" onClick={() => deleteSelectedEntry(stafflog.id)}> 
-                            Delete Entry
-                        </button>
+                            <button type="button" className="btn btn-danger" onClick={() => deleteSelectedEntry(stafflog.id)}> 
+                                Delete Entry
+                            </button>
                         </div>
                     </div>
                 </div>
