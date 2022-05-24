@@ -50,11 +50,11 @@ const NewLogEntry = ( ) => {
                 <Link to="/" >
                     <img src={hostelLogo} alt="Hostel Logo" />
                 </Link>
-                <div>
+                <div className="border border-secondary">
                     <h1 className="font-weight-normal">
                     Add an Incident to the Staff Log
                     </h1>
-                    <div className="text-right mt-5">
+                    <div className="text-right ml-5 float-right border border-success">
                         <Link to="/stafflog" className="btn border border border-secondary">
                             Back to Staff Log
                         </Link>
