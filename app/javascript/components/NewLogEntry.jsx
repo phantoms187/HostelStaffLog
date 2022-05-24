@@ -15,9 +15,6 @@ const NewLogEntry = ( ) => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const [stafflog, setStafflog] = useState([]);
-
-
     const entry = location.state ? location.state.entry : false;
  
     const defaultFormFields = {

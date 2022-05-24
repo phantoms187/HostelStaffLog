@@ -66,4 +66,3 @@ export const deleteEntry = async (index) => {
     })
     .catch(error => console.log(error.message));
 }
-

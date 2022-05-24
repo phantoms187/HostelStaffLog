@@ -8,7 +8,7 @@
 
 5.times do |i|
     Stafflog.create(
-      date: "May #{i + 1}",
+      date: "2022/05/1#{i + 1}",
       subject: 'Beautiful Day',
       message: 'Warm and Sunny.'
     )
