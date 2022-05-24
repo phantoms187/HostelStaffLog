@@ -6,7 +6,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import FormInput from "./FormInput";
 import { addEntry, updateEntry } from "../services/EntriesDB";
 
+import hostelLogo from "../../assets/images/portlandHostel.png";
 
+import "../../assets/stylesheets/logEntry.styles"
 
 
 const NewLogEntry = ( ) => {
@@ -45,12 +47,23 @@ const NewLogEntry = ( ) => {
     }
    
     return (
-    <div className="container mt-5">
-        <div className="row">
-        <div className="col-sm-12 col-lg-6 offset-lg-3">
-            <h1 className="font-weight-normal mb-5">
-            Add an incident to the staff log:
-            </h1>
+    <div className="d-flex align-items-center justify-content-center container mt-5">
+        <div className="col-sm-12">
+            <div className="d-flex justify-content-around align-items-baseline">
+                <Link to="/" >
+                    <img src={hostelLogo} alt="Hostel Logo" />
+                </Link>
+                <div>
+                    <h1 className="font-weight-normal">
+                    Add an Incident to the Staff Log
+                    </h1>
+                    <div className="text-right mt-5">
+                        <Link to="/stafflog" className="btn border border border-secondary">
+                            Back to Staff Log
+                        </Link>
+                    </div>
+                </div>
+            </div>
             <form onSubmit={handleSubmit}>
                 <FormInput
                     label="Date"
@@ -87,11 +100,7 @@ const NewLogEntry = ( ) => {
                      </button>
                     )
                 }
-                <Link to="/stafflog" className="btn btn-link mt-3">
-                    Back to Log
-                </Link>
             </form>
-        </div>
         </div>
     </div>
     );

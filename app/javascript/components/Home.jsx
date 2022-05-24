@@ -1,13 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default () => (
+// import hostelLogo from "./portlandHostel.png";
+import hostelLogo from "../../assets/images/portlandHostel.png";
+
+const Home = () => (
   <div className="vw-100 vh-100 primary-color d-flex align-items-center justify-content-center">
     <div className="jumbotron jumbotron-fluid bg-transparent">
+      <div className= "d-flex justify-content-center">
+        <img src={hostelLogo} alt="Hostel Logo" />
+      </div>
       <div className="container secondary-color">
-        <h1 className="display-4">Food Recipes</h1>
         <p className="lead">
-          A curated list of recipes for the best homemade meal and delicacies.
+          Welcome to the Portland Hostel Employee Page
         </p>
         <hr className="my-4" />
         <Link
@@ -15,9 +20,11 @@ export default () => (
           className="btn btn-lg custom-button"
           role="button"
         >
-          View Recipes
+          View Staff Log Book
         </Link>
       </div>
     </div>
   </div>
 );
+
+export default Home;

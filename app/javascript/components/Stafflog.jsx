@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import moment from "moment";
+
+
 import { getEntries, deleteEntry } from "../services/EntriesDB"
+
+import hostelLogo from "../../assets/images/portlandHostel.png";
+
+import "../../assets/stylesheets/stafflog.styles"
+
 
 const Stafflog = () => {
     
@@ -26,20 +34,37 @@ const Stafflog = () => {
         await deleteEntry(id);
     }
 
+    const formatDate = (date) => {
+        
+        const newDate = moment(date, 'YYYY-MM-DD').format('dddd MMMM Do, YYYY');
+        if(newDate){
+            return newDate;
+        } else {
+            return date;
+        }
+        // return moment(date, 'YYYY-MM-DD').format('dddd MMMM Do, YYYY');
+    }
+
     const logEntries = stafflog.map((stafflog) => (
         <div key={stafflog.id} className="col-md-12 ">
             <div className="card mb-4">
-                <div className="card-body">
-                    <h5 className="card-title">Date: {stafflog.date} </h5>
-                    <h3> Subject: {stafflog.subject}</h3>
-                    <p>{stafflog.message}</p>
-                    <div className="col-lg-2 d-flex justify-content-between">
+                <div className="card-body d-flex justify-content-between">
+                    <div>
+                        <h5 className="card-title">Date: {formatDate(stafflog.date)} </h5>
+                        <h4> Subject: {stafflog.subject}</h4>
+                        <h5>{stafflog.message}</h5>
+                    </div>
+                    <div className="col-lg-2 d-flex flex-column justify-content-around">
+                        <div>
                         <button type="button" className="btn btn-warning" onClick={() => updateSelectedEntry(stafflog)}> 
                             Edit Entry
                         </button>
+                        </div>
+                        <div>
                         <button type="button" className="btn btn-danger" onClick={() => deleteSelectedEntry(stafflog.id)}> 
                             Delete Entry
                         </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,28 +81,30 @@ const Stafflog = () => {
 
     return (
     <>
-        <section className="jumbotron jumbotron-fluid text-center">
-        <div className="container py-5">
-            <h1 className="display-4">Staff Log</h1>
-            <p className="lead text-muted">
-            Please add incidents and passdown notable for other employees:
-            </p>
+        <section className="stafflog-title-container jumbotron jumbotron-fluid text-center primary-color ">
+        <div className= "primary-color d-flex justify-content-around">
+            <Link to="/" >
+                <img src={hostelLogo} alt="Hostel Logo" />
+            </Link>
+            <div>
+                <h1 className="display-4">Staff Log</h1>
+                <p className="lead text-muted">
+                Please Add Incidents and Passdown Notable for Other Employees
+                </p>
+            </div>
         </div>
         </section>
-        <div className="py-5">
-        <main className="container">
-            <div className="text-right mb-3">
-                <Link to="/newLogEntry" className="btn custom-button">
-                    Create New Entry
-                </Link>
-            </div>
-            <div className="row">
-                {stafflog.length > 0 ? logEntries : noLogs}
-            </div>
-            <Link to="/" className="btn btn-link">
-                Home
-            </Link>
-        </main>
+        <div className="py-5 ">
+            <main className="container">
+                <div className="text-left mb-3">
+                    <Link to="/newLogEntry" className="btn custom-button">
+                        Create New Entry
+                    </Link>
+                </div>
+                <div className="row">
+                    {stafflog.length > 0 ? logEntries : noLogs}
+                </div>
+            </main>
         </div>
     </>
     )

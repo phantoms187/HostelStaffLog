@@ -8,7 +8,7 @@ import App from "../components/App";
 
 document.addEventListener("DOMContentLoaded", () => {
   render(
-    <App />,
+    <App className="main-application"/>,
     document.body.appendChild(document.createElement("div"))
   );
 });
